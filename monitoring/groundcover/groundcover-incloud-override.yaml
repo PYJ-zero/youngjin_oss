@@ -1,9 +1,0 @@
-global:
-  backend:
-    enabled: false
-  ingestion:
-    sendToVector: true
-  ingress:
-    site: o4g966.platform.grcv.io
-  groundcover_token: WSzFOopIm8rV7AFMveTI2tWI7leHgKD1
-clusterId: tf-dev-eks-cluster-youngjin-01
