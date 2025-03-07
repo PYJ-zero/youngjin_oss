@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otel-demo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/refresh: hard
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: otel-demo

@@ -1,0 +1,5 @@
+kube-state-metrics:
+  enabled: true
+# enable custom-metrics to automatically scrape the installed kube-state-metrics
+# custom-metrics:
+#   enabled: true

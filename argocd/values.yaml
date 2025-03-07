@@ -1,0 +1,23 @@
+global:
+  tolerations:
+  - key: role
+    effect: NoSchedule
+    operator: Equal
+    value: service
+
+server:
+  insecure: true
+  basehref: /argocd
+  volumes:
+    - name: static-files
+      persistentVolumeClaim:
+        claimName: argo-server-pvc
+  tolerations:
+  - key: role
+    effect: NoSchedule
+    operator: Equal
+    value: service
+configs:
+  credentialTemplates:
+    admin:
+      apiKey: enabled

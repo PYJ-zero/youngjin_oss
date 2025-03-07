@@ -1,0 +1,38 @@
+loki:
+  url: http://{{(include "loki.serviceName" .)}}:{{ .Values.loki.service.port }}
+  tolerations:
+    - key: "role"
+      operator: "Equal"
+      value: "service"
+      effect: "NoSchedule"
+  storage:
+    bucketNames:
+      chunks: {your-chunks-s3-name}
+      ruler: {your-ruler-s3-name}
+      admin: {your-admin-s3-name}
+    type: s3
+    s3:
+      endpoint: s3-website.ap-northeast-2.amazonaws.com
+      region: ap-northeast-2
+      secretAccessKey: {your-secret-key}
+      accessKeyId: {your-access-key}
+      s3ForcePathStyle: false
+      insecure: false
+backend:
+  tolerations:
+    - key: "role"
+      operator: "Equal"
+      value: "service"
+      effect: "NoSchedule"
+read:
+  tolerations:
+    - key: "role"
+      operator: "Equal"
+      value: "service"
+      effect: "NoSchedule"
+write:
+  tolerations:
+    - key: "role"
+      operator: "Equal"
+      value: "service"
+      effect: "NoSchedule"
