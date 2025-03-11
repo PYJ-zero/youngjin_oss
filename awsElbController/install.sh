@@ -2,6 +2,7 @@
 ##1. Policy 및 Role 생성 제외
 ###
 
+#https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/lbc-helm.html
 
 ##2. Controller 설치
 ###
